@@ -1,0 +1,17 @@
+--mongosh 
+##commands 
+
+show dbs
+use chitkara university 
+university> db.students.insertMany({"name":"geetika","age":"20","grade":"A"},{"name":"Ahana","age":"20","grade":"A"})
+show dbsdb.students.find()
+db.students.find({age:{$gt : 18}})
+db.students.find({age:{$gt : "18"}})
+db.students.insertOne([{"name":"john","age":"19","grade":"A"}])
+db.students.find()
+db.students.deleteOne({"name":"John"})
+db.students.updateOne({"name":"john"},{$set :{"grade":"A"}})
+db.students.deleteOne({"name":"Ahana"})
+db.students.countDocuments({"grade":"A"})
+db.students.find({},{name:1,grade:1,_id:0})
+db.students.find().sort({age:-1})
