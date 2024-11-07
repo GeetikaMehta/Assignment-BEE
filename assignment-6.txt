@@ -1,0 +1,66 @@
+use company
+db.employees.find()
+db.employees.updateMany({},{$set :{age:25}})
+
+db.inventory.insertMany([{item_name:"chips",price:20,stock:50},{item_name:"kurkure",price:30,stock:60},{item_nameitem_name:"juice",price:140,stock:70},{item_name:"cake",price:450,stock:600}])
+db.products.insertMany([{item_name:"chips",price:20,stock:50},{item_name:"kurkure",price:30,stock:60},{item_name:"juice",price:140,stock:70},{item_name:"cake",price:450,stock:600}])
+db.products.find()
+db.products.find({$and:[{stock:{$gt:0}},{price:{$lt:50}}]})
+use Chitkara
+switched to db Chitkara
+Chitkara> db.students.find()
+[db.employees.updateOne({name:"john"},{$set:{garde:"D"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 0,
+  modifiedCount: 0,
+  upsertedCount: 0
+  db.students.insertMany([
+   { name: "Alice", enrolled: true, grade: "B" },
+ { name: "Bob", enrolled: false, grade: "A" },
+  { name: "Charlie", enrolled: true, grade: "D" },
+  { name: "Diana", enrolled: false, grade: "F" },
+  { name: "Eve", enrolled: true, grade: "C" },
+ { name: "Frank", enrolled: true, grade: "A" },
+   { name: "Grace", enrolled: false, grade: "B" },
+
+ use order
+  db.orders.updateOne({status:"cancelled"},{$set :{shipped_date:0}})
+  db.orders.updateOne({status:"pending"},{$set :{shipped_date:0}})
+  db.students.updateMany({name:"Grace"},{$set :{exam_score:49}})
+   db.students.updateOne({ name: "Alice" }, { $set: { participation: true } });
+    db.students.find({$and:[{exam_score:{$lt:50}},{participation:false}]})
+    db.employees.insertMany([
+...   { name: "John", department: "Sales", experience: 5, age: 30 },
+...   { name: "Jane", department: "Sales", experience: 2, age: 24 },
+...   { name: "Mike", department: "Engineering", experience: 4, age: 28 },
+...   { name: "Sara", department: "Sales", experience: 4, age: 22 },
+...   { name: "Tom", department: "Sales", experience: 1, age: 26 }
+... ]);
+{
+     db.employees.find({
+...   $and: [
+...     { department: "Sales" },
+...     {
+...       $or: [
+...         { experience: { $gt: 3 } },
+...         { age: { $lt: 25 } }
+...       ]
+...     }
+...   ]
+... })
+db.inventory.find({price:{$lte:100}},{item_name:1,price:1,_id:0})
+ db.employees.insertMany([
+...   { name: "John", department: "Sales" },
+...   { name: "Jane", department: "Engineering" },
+...   { name: "Mike", department: "Marketing" },
+...   { name: "Sara", department: "IT" },
+...   { name: "Tom", department: "HR" }
+... ]);
+db.employees.find({
+...   department: { $nin: ["Engineering", "IT"] }
+... }, {
+...   name: 1,
+...   department: 1
+... })
