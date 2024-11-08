@@ -1,0 +1,54 @@
+// assignment-7
+mongosh
+use Chitkara
+show collectios 
+db.students.find()
+db.students.insertOne([{name:"Ivy"},{attendance:80}])
+db.students.find()
+db.students.insertOne({name:"Ivy"},{attendance:80})
+db.students.updateOne({name:"Ivy"},{$set:{attendance:80}})
+db.students.updatemany({$set:{attendance:80}})
+db.students.find({$or:[{grade :{ $gt : 85}},{attendance:{$gt:90}},{age:{$lt}}]})
+use job
+db.createCollections("job")
+db.job.insertMany([{salary:50,000,located:"New york"},{salary:56,000,located:"San Francisco"}])
+db.job.insertMany([{salary:50000,located:"New york"},{salary:56000,located:"San Francisco"}])
+
+job> db.job.insertMany([{salary:50000,located:"New york"},{salary:56000,located:"San Francisco"},{salary:70000,located:"New York"},{salary:64000,located:"new york"},{salary:45000,located:"san francisco"}])
+
+job> db.job.find()
+use shop
+db.inventory.find()
+ db.inventory.find({discount:{$lte:10}})
+use order
+db.orders.find()
+db.students.updateOne({status:"cancelled"},{$set:{customer_type:"VIP"}})
+db.orders.find()
+db.orders.updateOne({status:"cancelled"},{$set:{customer_type:"VIP"}})
+db.orders.updateOne({status:"pending"},{$set:{customer_type:"VIP"}})
+db.orders.find()
+a> db.students.find({$or:[{grade:{$lt:60}},{attendance:{$lt : 75}}]})
+db.items.insertMany([{type:"software",price:45000},{type:"service",price:23000},{type:"software",price:56000},{type:"software",price:35000}])
+item> db.students.find({type:"serive"},{price:{$lt : 100}}]})
+
+company> db.employees.find({ experience: { $gt: 5 }, department: { $in: ["Engineering", "HR"] } })
+ db.orders.insertMany([
+...   { order_id: 1, status: "urgent", total_amount: 1500, priority: "medium" },
+...   { order_id: 2, status: "pending", total_amount: 800, priority: "high" },
+...   { order_id: 3, status: "urgent", total_amount: 500, priority: "low" },
+...   { order_id: 4, status: "urgent", total_amount: 2000, priority: "high" },
+...   { order_id: 5, status: "completed", total_amount: 1200, priority: "medium" },
+...   { order_id: 6, status
+...
+ db.orders.find({
+...   $or: [
+...     {
+...       status: "urgent",
+...       total_amount: { $gt: 1000 }
+...     },
+...     {
+...       priority: "high"
+...     }
+...   ]
+... })
+ db.orders.find({ $or: [ { status: "urgent", total_amount: { $gt: 1000 } }, { priority: "high" }] })
